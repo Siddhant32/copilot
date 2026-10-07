@@ -20,7 +20,7 @@ export function Header() {
       : { title: "CarePilot" });
 
   return (
-    <header className="sticky top-0 z-30 flex items-center justify-between gap-4 border-b border-border bg-[#f3f5f2]/85 px-4 py-3 backdrop-blur md:px-8">
+    <header className="sticky top-0 z-30 flex items-center justify-between gap-4 border-b border-white/10 bg-black/20 px-4 py-3 backdrop-blur-xl md:px-8">
       <div className="flex items-center gap-3 lg:hidden">
         <Logo compact />
       </div>
@@ -36,7 +36,7 @@ export function Header() {
         <button
           type="button"
           onClick={() => setSearchOpen(true)}
-          className="hidden md:flex h-10 w-56 items-center gap-2 rounded-full border border-border bg-white px-3 text-sm text-muted"
+          className="hidden h-11 w-56 items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 text-sm text-muted transition hover:border-teal/40 md:flex"
         >
           <Search className="h-4 w-4" />
           Search records
@@ -53,7 +53,7 @@ export function Header() {
         <NotificationPanel />
         <Link
           href="/settings"
-          className="hidden sm:grid h-10 w-10 place-items-center rounded-full bg-navy text-xs font-semibold text-white"
+          className="hidden h-11 w-11 place-items-center rounded-full bg-gradient-to-br from-teal to-violet text-xs font-bold text-ink sm:grid"
           aria-label="Alex Morgan profile"
         >
           AM

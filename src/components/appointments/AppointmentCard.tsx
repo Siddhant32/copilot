@@ -4,18 +4,19 @@ import Link from "next/link";
 import { MapPin } from "lucide-react";
 import type { Appointment } from "@/lib/types";
 import { Button } from "@/components/ui/button";
+import { TiltCard } from "@/components/ui/tilt-card";
 import { formatDate, formatTime } from "@/lib/utils";
 
 export function AppointmentItem({ appointment }: { appointment: Appointment }) {
   const upcoming = appointment.status === "upcoming";
   return (
-    <article className="rounded-[1.35rem] border border-border bg-white p-5 card-shadow">
-      <p className="text-xs font-semibold uppercase tracking-wide text-teal-dark">
+    <TiltCard as="article" className="p-5">
+      <p className="text-xs font-semibold uppercase tracking-[0.2em] text-teal">
         {upcoming ? "Upcoming" : "Completed"}
       </p>
       <h3 className="mt-1 text-lg font-semibold text-navy">{appointment.doctor}</h3>
       <p className="text-sm text-muted">{appointment.specialty}</p>
-      <p className="mt-3 font-display text-2xl text-navy">
+      <p className="mt-3 font-display text-3xl text-navy">
         {upcoming ? "Tomorrow" : formatDate(appointment.start)}
       </p>
       <p className="text-sm text-muted">{formatTime(appointment.start)}</p>
@@ -33,6 +34,6 @@ export function AppointmentItem({ appointment }: { appointment: Appointment }) {
           </Button>
         </div>
       )}
-    </article>
+    </TiltCard>
   );
 }

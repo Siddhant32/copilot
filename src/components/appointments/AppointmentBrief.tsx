@@ -9,33 +9,37 @@ import { formatDate } from "@/lib/utils";
 export function AppointmentBrief() {
   return (
     <article className="mx-auto max-w-3xl space-y-6">
-      <header className="rounded-[1.5rem] border border-border bg-white p-6 card-shadow no-print">
+      <header className="ai-surface rounded-[1.7rem] p-6 no-print md:p-8">
         <div className="flex flex-wrap items-start justify-between gap-3">
           <div>
-            <p className="text-sm text-muted">Prepared by CarePilot</p>
-            <h2 className="font-display text-4xl text-navy">Your appointment brief</h2>
+            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-teal">
+              Prepared by CarePilot
+            </p>
+            <h2 className="mt-2 font-display text-4xl text-navy md:text-6xl">
+              Your appointment <span className="gradient-text">brief</span>
+            </h2>
             <p className="mt-2 text-sm text-muted">
               A discussion aid for your visit with Dr. Ananya Mehta — not a medical diagnosis.
             </p>
           </div>
           <AiLabel />
         </div>
-        <Button className="mt-4" onClick={() => window.print()}>
+        <Button className="mt-6" onClick={() => window.print()}>
           Print / Export brief
         </Button>
       </header>
 
-      <section className="rounded-[1.5rem] border border-border bg-white p-6 print:shadow-none">
+      <section className="glass-panel rounded-[1.6rem] p-6 print:shadow-none">
         <h3 className="font-display text-2xl text-navy">Visit</h3>
         <p className="mt-2 text-sm">Tomorrow · 10:30 AM · CityCare Clinic</p>
         <p className="text-sm text-muted">Dr. Ananya Mehta · General Physician</p>
       </section>
 
-      <section className="rounded-[1.5rem] border border-border bg-white p-6">
+      <section className="glass-panel rounded-[1.6rem] p-6">
         <h3 className="font-display text-2xl text-navy">Recent health changes</h3>
         <ul className="mt-4 grid gap-3">
           {reports[0].values.slice(0, 3).map((value) => (
-            <li key={value.name} className="rounded-2xl bg-[#f8faf7] px-4 py-3 text-sm">
+            <li key={value.name} className="rounded-2xl bg-white/5 px-4 py-3 text-sm">
               <span className="font-semibold text-navy">{value.name}</span>
               <span className="ml-2">
                 {value.value} {value.unit}
@@ -48,7 +52,7 @@ export function AppointmentBrief() {
         </ul>
       </section>
 
-      <section className="rounded-[1.5rem] border border-border bg-white p-6">
+      <section className="glass-panel rounded-[1.6rem] p-6">
         <h3 className="font-display text-2xl text-navy">Current medications</h3>
         <ul className="mt-4 space-y-3 text-sm">
           {medications.map((med) => (
@@ -64,7 +68,7 @@ export function AppointmentBrief() {
         </ul>
       </section>
 
-      <section className="rounded-[1.5rem] border border-border bg-white p-6">
+      <section className="glass-panel rounded-[1.6rem] p-6">
         <h3 className="font-display text-2xl text-navy">Recent reports</h3>
         <ul className="mt-4 space-y-2 text-sm">
           {reports.slice(0, 3).map((report) => (
@@ -76,7 +80,7 @@ export function AppointmentBrief() {
         </ul>
       </section>
 
-      <section className="rounded-[1.5rem] border border-border bg-white p-6">
+      <section className="glass-panel rounded-[1.6rem] p-6">
         <h3 className="font-display text-2xl text-navy">Symptoms you&apos;ve reported</h3>
         <ul className="mt-4 space-y-2 text-sm">
           {symptoms.map((symptom) => (
@@ -87,7 +91,7 @@ export function AppointmentBrief() {
         </ul>
       </section>
 
-      <section className="ai-surface rounded-[1.5rem] p-6">
+      <section className="ai-surface rounded-[1.6rem] p-6">
         <h3 className="font-display text-2xl text-navy">Questions to discuss</h3>
         <ol className="mt-4 list-decimal space-y-2 pl-5 text-sm leading-relaxed">
           <li>Should my recent Vitamin D result be discussed?</li>

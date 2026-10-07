@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 export function Logo({ compact = false }: { compact?: boolean }) {
   return (
     <Link href="/" className="flex items-center gap-3 rounded-xl px-1 py-1">
-      <span className="grid h-10 w-10 place-items-center rounded-2xl bg-navy text-white shadow-sm">
+      <span className="grid h-11 w-11 place-items-center rounded-2xl bg-gradient-to-br from-teal via-violet to-magenta text-ink shadow-[0_0_24px_rgba(46,230,200,0.45)]">
         <svg viewBox="0 0 24 24" className="h-5 w-5" aria-hidden>
           <path
             fill="currentColor"
@@ -32,7 +32,7 @@ export function Sidebar() {
   const pathname = usePathname();
 
   return (
-    <aside className="hidden lg:flex h-screen w-[260px] shrink-0 flex-col border-r border-border bg-white/80 px-4 py-5 backdrop-blur">
+    <aside className="hidden h-screen w-[272px] shrink-0 flex-col border-r border-white/10 bg-black/25 px-4 py-5 backdrop-blur-2xl lg:flex">
       <Logo />
       <nav className="mt-8 flex flex-1 flex-col gap-1" aria-label="Primary">
         {navItems.map((item) => {
@@ -46,21 +46,21 @@ export function Sidebar() {
               key={item.href}
               href={item.href}
               className={cn(
-                "flex items-center gap-3 rounded-2xl px-3 py-2.5 text-sm font-medium transition",
+                "group flex items-center gap-3 rounded-2xl px-3 py-2.5 text-sm font-medium transition",
                 active
-                  ? "bg-teal-soft text-teal-dark"
-                  : "text-muted hover:bg-[#f3f5f2] hover:text-navy",
+                  ? "bg-gradient-to-r from-teal/20 to-violet/20 text-navy shadow-[0_0_20px_rgba(46,230,200,0.12)]"
+                  : "text-muted hover:bg-white/5 hover:text-navy",
               )}
             >
-              <Icon className="h-4 w-4" aria-hidden />
+              <Icon className={cn("h-4 w-4", active && "text-teal")} aria-hidden />
               {item.label}
             </Link>
           );
         })}
       </nav>
-      <div className="rounded-2xl border border-border bg-[#f8faf7] p-3">
+      <div className="rounded-2xl border border-white/10 bg-white/5 p-3">
         <div className="flex items-center gap-3">
-          <div className="grid h-10 w-10 place-items-center rounded-full bg-navy text-sm font-semibold text-white">
+          <div className="grid h-10 w-10 place-items-center rounded-full bg-gradient-to-br from-amber to-magenta text-sm font-bold text-ink">
             AM
           </div>
           <div>

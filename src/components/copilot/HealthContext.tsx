@@ -6,7 +6,7 @@ import { AiLabel } from "@/components/ui/ai-label";
 export function HealthContext() {
   return (
     <aside className="hidden w-[300px] shrink-0 xl:block">
-      <div className="sticky top-24 space-y-4 rounded-[1.5rem] border border-border bg-white p-5 card-shadow">
+      <div className="glass-panel sticky top-24 space-y-4 rounded-[1.6rem] p-5">
         <div className="flex items-center justify-between">
           <h2 className="font-display text-xl text-navy">Your health context</h2>
           <AiLabel />
@@ -15,11 +15,11 @@ export function HealthContext() {
           {patient.fullName} · {patient.age} · {patient.bloodGroup}
         </p>
         <dl className="grid grid-cols-2 gap-3 text-sm">
-          <div className="rounded-2xl bg-[#f8faf7] p-3">
+          <div className="rounded-2xl bg-white/5 p-3">
             <dt className="text-xs text-muted">Records</dt>
             <dd className="text-lg font-semibold text-navy">{healthContext.records}</dd>
           </div>
-          <div className="rounded-2xl bg-[#f8faf7] p-3">
+          <div className="rounded-2xl bg-white/5 p-3">
             <dt className="text-xs text-muted">Medications</dt>
             <dd className="text-lg font-semibold text-navy">
               {healthContext.activeMedications}

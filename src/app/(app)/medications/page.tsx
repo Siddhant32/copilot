@@ -11,7 +11,7 @@ export default function MedicationsPage() {
     <div className="space-y-6">
       <div className="flex items-end justify-between">
         <div>
-          <h2 className="font-display text-4xl text-navy">Medications</h2>
+          <h2 className="font-display text-4xl text-navy md:text-6xl">Medications</h2>
           <p className="text-sm text-muted">Active medicines from your prescription records.</p>
         </div>
         <Button>

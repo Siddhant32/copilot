@@ -11,11 +11,11 @@ import { Disclaimer } from "@/components/Disclaimer";
 export function ReportViewer({ report }: { report: MedicalReport }) {
   return (
     <div className="grid gap-5 lg:grid-cols-[1.1fr_0.9fr]">
-      <section className="rounded-[1.5rem] border border-border bg-white p-5 card-shadow">
-        <p className="text-xs font-semibold uppercase tracking-wide text-muted">
+      <section className="glass-panel rounded-[1.6rem] p-5">
+        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-teal">
           Document preview
         </p>
-        <div className="mt-4 min-h-[520px] rounded-[1.2rem] border border-dashed border-border bg-[#fbfcf9] p-6">
+        <div className="mt-4 min-h-[520px] rounded-[1.2rem] border border-dashed border-white/15 bg-black/25 p-6">
           <div className="mx-auto max-w-md space-y-4">
             <div className="flex items-start justify-between">
               <div>
@@ -38,7 +38,7 @@ export function ReportViewer({ report }: { report: MedicalReport }) {
                 </thead>
                 <tbody>
                   {report.values.map((value) => (
-                    <tr key={value.name} className="border-t border-border">
+                    <tr key={value.name} className="border-t border-white/10">
                       <td className="py-2">{value.name}</td>
                       <td>
                         {value.value} {value.unit}
@@ -57,7 +57,7 @@ export function ReportViewer({ report }: { report: MedicalReport }) {
           </div>
         </div>
       </section>
-      <aside className="ai-surface rounded-[1.5rem] p-6">
+      <aside className="ai-surface rounded-[1.6rem] p-6">
         <div className="flex items-center justify-between">
           <h2 className="font-display text-2xl text-navy">AI Summary</h2>
           <AiLabel />
@@ -80,7 +80,7 @@ export function ReportViewer({ report }: { report: MedicalReport }) {
               <h3 className="font-semibold text-navy">Important values</h3>
               <ul className="mt-2 space-y-2">
                 {report.values.map((value) => (
-                  <li key={value.name} className="rounded-2xl bg-white px-3 py-2">
+                  <li key={value.name} className="rounded-2xl bg-black/30 px-3 py-2">
                     <span className="font-medium text-navy">{value.name}</span>
                     <span className="ml-2 text-muted">
                       {value.value} {value.unit}

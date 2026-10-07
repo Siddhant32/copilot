@@ -18,19 +18,19 @@ export function SheetContent({
 }) {
   return (
     <DialogPrimitive.Portal>
-      <DialogPrimitive.Overlay className="fixed inset-0 z-50 bg-[#15202b]/25" />
+      <DialogPrimitive.Overlay className="fixed inset-0 z-50 bg-black/55 backdrop-blur-sm" />
       <DialogPrimitive.Content
         className={cn(
-          "fixed z-50 bg-white shadow-2xl",
-          side === "right" && "inset-y-0 right-0 w-[min(420px,100%)]",
-          side === "left" && "inset-y-0 left-0 w-[min(300px,100%)]",
-          side === "bottom" && "inset-x-0 bottom-0 rounded-t-[1.5rem]",
+          "glass-panel fixed z-50",
+          side === "right" && "inset-y-0 right-0 w-[min(420px,100%)] rounded-none",
+          side === "left" && "inset-y-0 left-0 w-[min(300px,100%)] rounded-none",
+          side === "bottom" && "inset-x-0 bottom-0 rounded-t-[1.7rem]",
           className,
         )}
         {...props}
       >
         {children}
-        <DialogPrimitive.Close className="absolute right-4 top-4 rounded-full p-1 text-muted hover:bg-[#f3f5f2]">
+        <DialogPrimitive.Close className="absolute right-4 top-4 rounded-full p-1 text-muted hover:bg-white/10">
           <X className="h-4 w-4" />
           <span className="sr-only">Close</span>
         </DialogPrimitive.Close>

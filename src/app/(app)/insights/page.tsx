@@ -4,31 +4,32 @@ import Link from "next/link";
 import { insights } from "@/lib/mock-data";
 import { AiLabel } from "@/components/ui/ai-label";
 import { Badge } from "@/components/ui/badge";
+import { TiltCard } from "@/components/ui/tilt-card";
 import { cn } from "@/lib/utils";
 
 const toneStyles = {
-  positive: "border-teal/20 bg-white",
-  information: "border-border bg-white",
-  attention: "border-amber/30 bg-white",
+  positive: "shadow-[0_0_30px_rgba(46,230,200,0.12)]",
+  information: "",
+  attention: "shadow-[0_0_30px_rgba(255,200,87,0.12)]",
 };
 
 export default function InsightsPage() {
   return (
     <div className="space-y-6">
       <div>
-        <h2 className="font-display text-4xl text-navy">Health Insights</h2>
+        <h2 className="font-display text-4xl text-navy md:text-6xl">
+          Health <span className="gradient-text">Insights</span>
+        </h2>
         <p className="text-sm text-muted">
           Calm observations from your records. CarePilot does not diagnose.
         </p>
       </div>
       <div className="grid gap-4 md:grid-cols-2">
         {insights.map((insight) => (
-          <article
+          <TiltCard
             key={insight.id}
-            className={cn(
-              "rounded-[1.35rem] border p-6 card-shadow",
-              toneStyles[insight.tone],
-            )}
+            as="article"
+            className={cn("p-6", toneStyles[insight.tone])}
           >
             <div className="flex items-center justify-between">
               <Badge
@@ -51,7 +52,7 @@ export default function InsightsPage() {
                 Open related records
               </Link>
             )}
-          </article>
+          </TiltCard>
         ))}
       </div>
     </div>

@@ -18,7 +18,7 @@ export function MobileNav() {
   return (
     <>
       <nav
-        className="lg:hidden fixed bottom-0 inset-x-0 z-40 border-t border-border bg-white/95 px-2 pb-[env(safe-area-inset-bottom)] backdrop-blur"
+        className="lg:hidden fixed bottom-0 inset-x-0 z-40 border-t border-white/10 bg-black/70 px-2 pb-[env(safe-area-inset-bottom)] backdrop-blur-xl"
         aria-label="Mobile"
       >
         <div className="grid grid-cols-5">
@@ -34,7 +34,7 @@ export function MobileNav() {
                 href={item.href}
                 className={cn(
                   "flex flex-col items-center gap-1 py-2.5 text-[11px]",
-                  active ? "text-teal-dark" : "text-muted",
+                  active ? "text-teal" : "text-muted",
                 )}
               >
                 <Icon className="h-5 w-5" />

@@ -8,7 +8,7 @@ export function SourceCitation({ source }: { source: ChatSource }) {
   return (
     <Link
       href={source.href}
-      className="flex items-center gap-3 rounded-2xl border border-border bg-white px-3 py-2.5 hover:bg-teal-soft/60"
+      className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-3 py-2.5 hover:border-teal/40 hover:bg-teal-soft"
     >
       <FileText className="h-4 w-4 text-teal-dark" />
       <span>

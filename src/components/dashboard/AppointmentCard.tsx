@@ -9,15 +9,15 @@ export function AppointmentCard() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle className="font-display text-2xl font-normal">
+        <CardTitle className="font-display text-3xl font-bold">
           Next appointment
         </CardTitle>
       </CardHeader>
       <CardContent>
-        <p className="text-sm font-semibold uppercase tracking-wide text-teal-dark">
+        <p className="text-sm font-semibold uppercase tracking-[0.2em] text-teal">
           Tomorrow
         </p>
-        <p className="font-display text-3xl text-navy">10:30 AM</p>
+        <p className="font-display text-4xl text-navy">10:30 AM</p>
         <p className="mt-3 text-base font-semibold text-navy">Dr. Ananya Mehta</p>
         <p className="text-sm text-muted">General Physician</p>
         <p className="mt-2 flex items-center gap-1 text-sm text-muted">

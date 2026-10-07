@@ -44,17 +44,17 @@ export function ChatWindow() {
   }
 
   return (
-    <div className="flex min-h-[70vh] flex-1 flex-col rounded-[1.5rem] border border-border bg-white card-shadow">
+    <div className="glass-panel flex min-h-[70vh] flex-1 flex-col rounded-[1.7rem]">
       <div ref={listRef} className="flex-1 space-y-5 overflow-y-auto p-5 md:p-8 scrollbar-thin">
         {messages.length === 0 && (
           <div className="mx-auto flex max-w-xl flex-col items-center py-10 text-center">
-            <div className="grid h-14 w-14 place-items-center rounded-2xl bg-ai text-[#5b4d86]">
-              <Sparkles className="h-6 w-6" />
+            <div className="grid h-16 w-16 place-items-center rounded-2xl bg-gradient-to-br from-violet to-teal text-ink shadow-[0_0_30px_rgba(167,139,250,0.4)]">
+              <Sparkles className="h-7 w-7" />
             </div>
-            <h2 className="mt-5 font-display text-3xl text-navy">
-              How can I help you today?
+            <h2 className="mt-5 font-display text-4xl text-navy md:text-5xl">
+              How can I help <span className="gradient-text">you today?</span>
             </h2>
-            <p className="mt-2 text-sm leading-relaxed text-muted">
+            <p className="mt-3 text-sm leading-relaxed text-muted">
               I can help you understand your health information, organize your records,
               and prepare for conversations with your healthcare provider.
             </p>
@@ -72,14 +72,14 @@ export function ChatWindow() {
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="text-sm text-muted"
+            className="text-sm text-teal"
           >
             CarePilot is reviewing your records…
           </motion.p>
         )}
       </div>
-      <form onSubmit={onSubmit} className="border-t border-border p-4">
-        <div className="flex items-end gap-2 rounded-[1.4rem] border border-border bg-[#f8faf7] p-2">
+      <form onSubmit={onSubmit} className="border-t border-white/10 p-4">
+        <div className="flex items-end gap-2 rounded-[1.4rem] border border-white/15 bg-black/30 p-2">
           <Tooltip content="Attach document">
             <Button type="button" variant="ghost" size="icon" aria-label="Attach document">
               <Paperclip className="h-4 w-4" />
@@ -90,7 +90,7 @@ export function ChatWindow() {
             value={input}
             onChange={(event) => setInput(event.target.value)}
             placeholder="Ask anything about your health..."
-            className="max-h-32 flex-1 resize-none bg-transparent py-2.5 text-sm outline-none"
+            className="max-h-32 flex-1 resize-none bg-transparent py-2.5 text-sm text-navy outline-none placeholder:text-muted"
             onKeyDown={(event) => {
               if (event.key === "Enter" && !event.shiftKey) {
                 event.preventDefault();

@@ -10,7 +10,7 @@ export function ChatMessage({ message }: { message: ChatMessageType }) {
   if (message.role === "user") {
     return (
       <div className="flex justify-end">
-        <div className="max-w-[85%] rounded-3xl rounded-br-lg bg-navy px-4 py-3 text-sm text-white">
+        <div className="max-w-[85%] rounded-3xl rounded-br-lg bg-gradient-to-r from-teal to-violet px-4 py-3 text-sm font-medium text-ink">
           {message.content}
         </div>
       </div>
@@ -19,7 +19,7 @@ export function ChatMessage({ message }: { message: ChatMessageType }) {
 
   return (
     <motion.article
-      initial={{ opacity: 0, y: 8 }}
+      initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
       className="max-w-[92%] space-y-3"
     >
@@ -40,7 +40,7 @@ export function ChatMessage({ message }: { message: ChatMessageType }) {
               {message.changes.map((change) => (
                 <div
                   key={change.name}
-                  className="flex items-center justify-between rounded-2xl bg-white px-3 py-2.5"
+                  className="flex items-center justify-between rounded-2xl bg-black/30 px-3 py-2.5"
                 >
                   <div>
                     <p className="font-semibold">{change.name}</p>

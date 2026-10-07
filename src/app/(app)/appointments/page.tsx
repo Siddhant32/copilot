@@ -10,11 +10,11 @@ export default function AppointmentsPage() {
   return (
     <div className="space-y-8">
       <div>
-        <h2 className="font-display text-4xl text-navy">Appointments</h2>
+        <h2 className="font-display text-4xl text-navy md:text-6xl">Appointments</h2>
         <p className="text-sm text-muted">Upcoming visits and recent history.</p>
       </div>
       <section className="space-y-3">
-        <h3 className="text-sm font-semibold uppercase tracking-wide text-muted">
+        <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-teal">
           Upcoming
         </h3>
         <div className="grid gap-4 md:grid-cols-2">
@@ -24,7 +24,7 @@ export default function AppointmentsPage() {
         </div>
       </section>
       <section className="space-y-3">
-        <h3 className="text-sm font-semibold uppercase tracking-wide text-muted">
+        <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-muted">
           Past appointments
         </h3>
         <div className="grid gap-4 md:grid-cols-2">

@@ -10,7 +10,7 @@ export function RecentActivity() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle className="font-display text-2xl font-normal">
+        <CardTitle className="font-display text-3xl font-bold">
           Recent health activity
         </CardTitle>
       </CardHeader>
@@ -20,7 +20,7 @@ export function RecentActivity() {
             const Icon = icons[index] ?? Pill;
             return (
               <li key={event.id} className="flex gap-3">
-                <div className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-teal-soft text-teal-dark">
+                <div className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-teal-soft text-teal-dark">
                   <Icon className="h-4 w-4" />
                 </div>
                 <div>

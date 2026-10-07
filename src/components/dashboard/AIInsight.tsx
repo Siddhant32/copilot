@@ -8,17 +8,18 @@ import { motion } from "framer-motion";
 export function AIInsight() {
   return (
     <motion.article
-      initial={{ opacity: 0, y: 8 }}
+      initial={{ opacity: 0, y: 12 }}
       animate={{ opacity: 1, y: 0 }}
-      className="ai-surface rounded-[1.5rem] p-6"
+      className="ai-surface relative overflow-hidden rounded-[1.6rem] p-6"
     >
+      <div className="pointer-events-none absolute -right-10 top-0 h-32 w-32 rounded-full bg-violet/30 blur-3xl" />
       <div className="flex items-start justify-between gap-3">
-        <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-white text-[#5b4d86] shadow-sm">
+        <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-white/10 text-violet">
           <Sparkles className="h-5 w-5" />
         </div>
         <AiLabel />
       </div>
-      <h3 className="mt-4 font-display text-2xl text-navy">CarePilot noticed something</h3>
+      <h3 className="mt-4 font-display text-3xl text-navy">CarePilot noticed something</h3>
       <p className="mt-2 max-w-xl text-sm leading-relaxed text-muted">
         Your latest report shows that your Vitamin D value has changed compared with
         your previous report. Based on your records, this may be worth reviewing

@@ -7,8 +7,13 @@ export default function CopilotPage() {
   return (
     <div className="space-y-5">
       <div>
-        <h2 className="font-display text-3xl text-navy md:text-4xl">AI Health Copilot</h2>
-        <p className="mt-1 max-w-2xl text-sm text-muted">
+        <p className="text-xs font-semibold uppercase tracking-[0.28em] text-teal">
+          Hero feature
+        </p>
+        <h2 className="mt-2 font-display text-4xl text-navy md:text-6xl">
+          AI Health <span className="gradient-text">Copilot</span>
+        </h2>
+        <p className="mt-2 max-w-2xl text-sm text-muted md:text-base">
           Ask questions about your health records, reports, medications, and appointments.
         </p>
       </div>

@@ -13,20 +13,25 @@ const rows = [
   { name: "Hemoglobin", previous: "13.1", latest: "12.4", change: "0.7", dir: "down" as const, unit: "g/dL" },
 ];
 
+const selectClass =
+  "ml-2 rounded-full border border-white/15 bg-black/40 px-3 py-2 text-navy";
+
 export function ReportComparison() {
   return (
     <div className="space-y-5">
       <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
         <div>
-          <h2 className="font-display text-3xl text-navy">Compare reports</h2>
+          <h2 className="font-display text-4xl text-navy md:text-5xl">
+            Compare <span className="gradient-text">reports</span>
+          </h2>
           <p className="text-sm text-muted">
             Side-by-side view of values from your records — not a diagnosis.
           </p>
         </div>
-        <div className="flex gap-2">
+        <div className="flex flex-wrap gap-2">
           <label className="text-sm text-muted">
             Previous
-            <select defaultValue="rpt-blood-jun-14" className="ml-2 rounded-full border border-border bg-white px-3 py-2 text-navy">
+            <select defaultValue="rpt-blood-jun-14" className={selectClass}>
               {reports
                 .filter((report) => report.type === "laboratory")
                 .map((report) => (
@@ -38,7 +43,7 @@ export function ReportComparison() {
           </label>
           <label className="text-sm text-muted">
             Latest
-            <select defaultValue="rpt-blood-sep-12" className="ml-2 rounded-full border border-border bg-white px-3 py-2 text-navy">
+            <select defaultValue="rpt-blood-sep-12" className={selectClass}>
               {reports
                 .filter((report) => report.type === "laboratory")
                 .map((report) => (
@@ -51,9 +56,9 @@ export function ReportComparison() {
         </div>
       </div>
 
-      <div className="hidden overflow-hidden rounded-[1.5rem] border border-border bg-white md:block card-shadow">
+      <div className="glass-panel hidden overflow-hidden rounded-[1.6rem] md:block">
         <table className="w-full text-left text-sm">
-          <thead className="bg-[#f8faf7] text-muted">
+          <thead className="bg-white/5 text-muted">
             <tr>
               <th className="px-5 py-3 font-medium">Measure</th>
               <th className="px-5 py-3 font-medium">Previous</th>
@@ -63,7 +68,7 @@ export function ReportComparison() {
           </thead>
           <tbody>
             {rows.map((row) => (
-              <tr key={row.name} className="border-t border-border">
+              <tr key={row.name} className="border-t border-white/10">
                 <td className="px-5 py-4 font-semibold text-navy">{row.name}</td>
                 <td className="px-5 py-4">
                   {row.previous} {row.unit}
@@ -89,7 +94,7 @@ export function ReportComparison() {
 
       <div className="grid gap-3 md:hidden">
         {rows.map((row) => (
-          <article key={row.name} className="rounded-[1.2rem] border border-border bg-white p-4">
+          <article key={row.name} className="glass-panel rounded-[1.2rem] p-4">
             <p className="font-semibold text-navy">{row.name}</p>
             <p className="mt-1 text-sm text-muted">Previous {row.previous}</p>
             <p className="text-sm text-muted">Latest {row.latest}</p>
@@ -100,7 +105,7 @@ export function ReportComparison() {
         ))}
       </div>
 
-      <section className="ai-surface rounded-[1.5rem] p-6">
+      <section className="ai-surface rounded-[1.6rem] p-6">
         <div className="flex items-center justify-between">
           <h3 className="font-display text-2xl text-navy">AI interpretation</h3>
           <AiLabel />

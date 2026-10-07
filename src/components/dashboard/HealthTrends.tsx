@@ -15,9 +15,9 @@ import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { trendData } from "@/lib/mock-data";
 
 const metrics = [
-  { id: "hemoglobin", label: "Hemoglobin", color: "#17324f", unit: "g/dL" },
-  { id: "glucose", label: "Blood glucose", color: "#0e7c6b", unit: "mg/dL" },
-  { id: "vitaminD", label: "Vitamin D", color: "#b7791f", unit: "ng/mL" },
+  { id: "hemoglobin", label: "Hemoglobin", color: "#c4b5fd", unit: "g/dL" },
+  { id: "glucose", label: "Blood glucose", color: "#2ee6c8", unit: "mg/dL" },
+  { id: "vitaminD", label: "Vitamin D", color: "#ffc857", unit: "ng/mL" },
 ] as const;
 
 type MetricId = (typeof metrics)[number]["id"];
@@ -37,7 +37,7 @@ export function HealthTrends() {
     <Card className="min-w-0">
       <CardHeader className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
         <div>
-          <CardTitle className="font-display text-2xl font-normal">Health trends</CardTitle>
+          <CardTitle className="font-display text-3xl font-bold">Health trends</CardTitle>
           <CardDescription>Changes across your recent records</CardDescription>
         </div>
         <div className="flex flex-wrap gap-2">
@@ -63,13 +63,15 @@ export function HealthTrends() {
         <div className="h-full min-w-[420px]">
           <ResponsiveContainer width="100%" height="100%">
             <LineChart data={data} margin={{ top: 8, right: 12, left: 0, bottom: 0 }}>
-              <CartesianGrid stroke="#edf1ee" vertical={false} />
-              <XAxis dataKey="month" tick={{ fill: "#5b6b76", fontSize: 12 }} axisLine={false} tickLine={false} />
-              <YAxis tick={{ fill: "#5b6b76", fontSize: 12 }} axisLine={false} tickLine={false} width={40} />
+              <CartesianGrid stroke="rgba(255,255,255,0.08)" vertical={false} />
+              <XAxis dataKey="month" tick={{ fill: "#a8a3c7", fontSize: 12 }} axisLine={false} tickLine={false} />
+              <YAxis tick={{ fill: "#a8a3c7", fontSize: 12 }} axisLine={false} tickLine={false} width={40} />
               <Tooltip
                 contentStyle={{
                   borderRadius: 16,
-                  border: "1px solid #e3e8e3",
+                  border: "1px solid rgba(196,181,253,0.25)",
+                  background: "#12122a",
+                  color: "#f4f1ff",
                   boxShadow: "none",
                 }}
                 formatter={(value) => [`${value} ${active.unit}`, active.label]}
@@ -78,9 +80,9 @@ export function HealthTrends() {
                 type="monotone"
                 dataKey={metric}
                 stroke={active.color}
-                strokeWidth={2.5}
+                strokeWidth={3}
                 dot={{ r: 4, fill: active.color }}
-                activeDot={{ r: 6 }}
+                activeDot={{ r: 7 }}
               />
             </LineChart>
           </ResponsiveContainer>

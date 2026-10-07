@@ -12,7 +12,7 @@ export default function ReportDetailPage() {
 
   if (!report) {
     return (
-      <div className="rounded-[1.5rem] border border-border bg-white p-8">
+      <div className="glass-panel rounded-[1.6rem] p-8">
         <h2 className="font-display text-2xl">Report not found</h2>
         <Button asChild className="mt-4">
           <Link href="/reports">Back to reports</Link>
@@ -26,7 +26,7 @@ export default function ReportDetailPage() {
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div>
           <p className="text-sm text-muted">{report.typeLabel}</p>
-          <h2 className="font-display text-3xl text-navy">{report.title}</h2>
+          <h2 className="font-display text-4xl text-navy">{report.title}</h2>
         </div>
         {report.type === "laboratory" && (
           <Button asChild variant="secondary">
