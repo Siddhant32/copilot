@@ -20,7 +20,7 @@ export function Header() {
       : { title: "CarePilot" });
 
   return (
-    <header className="sticky top-0 z-30 flex items-center justify-between gap-4 border-b border-white/10 bg-black/20 px-4 py-3 backdrop-blur-xl md:px-8">
+    <header className="sticky top-0 z-30 flex items-center justify-between gap-4 border-b border-border bg-card/95 px-4 py-3 shadow-[0_4px_18px_rgba(37,50,55,0.16)] backdrop-blur-xl md:px-8">
       <div className="flex items-center gap-3 lg:hidden">
         <Logo compact />
       </div>

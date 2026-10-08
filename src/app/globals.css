@@ -1,26 +1,26 @@
 @import "tailwindcss";
 
 :root {
-  --background: #050510;
-  --foreground: #f4f1ff;
-  --card: rgba(16, 16, 38, 0.72);
-  --muted: #a8a3c7;
-  --border: rgba(196, 181, 253, 0.18);
-  --teal: #2ee6c8;
-  --teal-dark: #7cf6e0;
-  --teal-soft: rgba(46, 230, 200, 0.14);
-  --navy: #f4f1ff;
-  --amber: #ffc857;
-  --amber-soft: rgba(255, 200, 87, 0.16);
-  --danger: #ff6b8a;
-  --danger-soft: rgba(255, 107, 138, 0.16);
-  --ai: rgba(167, 139, 250, 0.16);
-  --ai-border: rgba(196, 181, 253, 0.35);
-  --ring: #2ee6c8;
-  --radius: 1.5rem;
-  --ink: #080814;
-  --violet: #a78bfa;
-  --magenta: #f472b6;
+  --background: #e0fbfc;
+  --foreground: #253237;
+  --card: #c2dfe3;
+  --muted: #5c6b73;
+  --border: #9db4c0;
+  --teal: #253237;
+  --teal-dark: #253237;
+  --teal-soft: #9db4c0;
+  --navy: #253237;
+  --amber: #5c6b73;
+  --amber-soft: #9db4c0;
+  --danger: #253237;
+  --danger-soft: #9db4c0;
+  --ai: #c2dfe3;
+  --ai-border: #5c6b73;
+  --ring: #5c6b73;
+  --radius: 1.25rem;
+  --ink: #e0fbfc;
+  --violet: #5c6b73;
+  --magenta: #9db4c0;
 }
 
 @theme inline {
@@ -42,8 +42,8 @@
   --color-ink: var(--ink);
   --color-violet: var(--violet);
   --color-magenta: var(--magenta);
-  --font-sans: var(--font-plus-jakarta);
-  --font-display: var(--font-syne);
+  --font-sans: var(--font-montserrat);
+  --font-display: var(--font-montserrat);
   --radius-lg: var(--radius);
 }
 
@@ -58,15 +58,46 @@ html {
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-plus-jakarta), ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
+  background-image: radial-gradient(rgba(37, 50, 55, 0.12) 0.7px, transparent 0.7px);
+  background-size: 26px 26px;
 }
+
+::before {
+  content: "";
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(circle at 80% 8%, rgba(17, 114, 79, 0.12), transparent 30%), radial-gradient(circle at 8% 80%, rgba(8, 75, 53, 0.08), transparent 28%);
+}
+
+.surface-float {
+  background: rgba(252, 253, 242, 0.98);
+  border: 1px solid rgba(2, 128, 144, 0.38);
+  box-shadow: 0 14px 28px rgba(1, 21, 29, 0.18), 0 2px 5px rgba(1, 21, 29, 0.08);
+  backdrop-filter: blur(14px);
+}
+
+.orbit-ring {
+  border: 1px solid rgba(36, 135, 101, 0.22);
+  box-shadow: 0 12px 28px rgba(22, 67, 49, 0.08), inset 0 0 26px rgba(36, 135, 101, 0.08);
+  transform: rotate(-18deg) perspective(500px) rotateX(62deg);
+}
+
+@keyframes core-breathe {
+  0%, 100% { transform: scale(0.97); filter: saturate(0.95); }
+  50% { transform: scale(1.04); filter: saturate(1.18); }
+}
+
+.core-breathe { animation: core-breathe 7s ease-in-out infinite; }
 
 h1,
 h2,
 .font-display {
-  font-family: var(--font-syne), var(--font-plus-jakarta), sans-serif;
-  letter-spacing: -0.045em;
+  font-family: var(--font-montserrat), sans-serif;
+  letter-spacing: -0.035em;
   font-weight: 700;
 }
 
@@ -81,14 +112,10 @@ h2,
 }
 
 .glass-panel {
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.02)),
-    rgba(12, 12, 32, 0.62);
-  border: 1px solid rgba(196, 181, 253, 0.2);
-  box-shadow:
-    0 0 0 1px rgba(255, 255, 255, 0.03) inset,
-    0 24px 60px rgba(0, 0, 0, 0.35);
-  backdrop-filter: blur(22px);
+  background: rgba(252, 253, 242, 0.97);
+  border: 1px solid rgba(2, 128, 144, 0.42);
+  box-shadow: 0 18px 34px rgba(1, 21, 29, 0.18), 0 2px 6px rgba(1, 21, 29, 0.08);
+  backdrop-filter: blur(18px);
 }
 
 .card-shadow {
@@ -98,16 +125,13 @@ h2,
 }
 
 .ai-surface {
-  background:
-    radial-gradient(120% 80% at 0% 0%, rgba(167, 139, 250, 0.22), transparent 55%),
-    radial-gradient(90% 70% at 100% 100%, rgba(46, 230, 200, 0.12), transparent 50%),
-    rgba(16, 12, 36, 0.75);
+  background: linear-gradient(135deg, #c2dfe3 0%, #9db4c0 100%);
   border: 1px solid var(--ai-border);
-  box-shadow: 0 0 40px rgba(167, 139, 250, 0.12);
+  box-shadow: 0 14px 35px rgba(8, 75, 53, 0.16), inset 0 1px rgba(255,255,255,0.55);
 }
 
 .gradient-text {
-  background: linear-gradient(120deg, #7cf6e0 0%, #c4b5fd 42%, #f472b6 78%, #ffc857 100%);
+  background: linear-gradient(120deg, #176047 0%, #248765 52%, #6a9b78 100%);
   background-size: 220% 220%;
   -webkit-background-clip: text;
   background-clip: text;
@@ -116,7 +140,7 @@ h2,
 }
 
 .glow-line {
-  background: linear-gradient(90deg, transparent, rgba(46, 230, 200, 0.8), rgba(167, 139, 250, 0.8), transparent);
+  background: linear-gradient(90deg, transparent, rgba(47, 157, 145, 0.5), rgba(217, 154, 61, 0.45), transparent);
 }
 
 .noise-overlay {

@@ -79,7 +79,7 @@ export function ChatWindow() {
         )}
       </div>
       <form onSubmit={onSubmit} className="border-t border-white/10 p-4">
-        <div className="flex items-end gap-2 rounded-[1.4rem] border border-white/15 bg-black/30 p-2">
+        <div className="flex items-end gap-2 rounded-[1.4rem] border border-border bg-card/90 p-2 shadow-sm">
           <Tooltip content="Attach document">
             <Button type="button" variant="ghost" size="icon" aria-label="Attach document">
               <Paperclip className="h-4 w-4" />
