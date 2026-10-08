@@ -15,9 +15,9 @@ import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { trendData } from "@/lib/mock-data";
 
 const metrics = [
-  { id: "hemoglobin", label: "Hemoglobin", color: "#c4b5fd", unit: "g/dL" },
-  { id: "glucose", label: "Blood glucose", color: "#2ee6c8", unit: "mg/dL" },
-  { id: "vitaminD", label: "Vitamin D", color: "#ffc857", unit: "ng/mL" },
+  { id: "hemoglobin", label: "Hemoglobin", color: "#5c6b73", unit: "g/dL" },
+  { id: "glucose", label: "Blood glucose", color: "#253237", unit: "mg/dL" },
+  { id: "vitaminD", label: "Vitamin D", color: "#9db4c0", unit: "ng/mL" },
 ] as const;
 
 type MetricId = (typeof metrics)[number]["id"];
@@ -64,14 +64,14 @@ export function HealthTrends() {
           <ResponsiveContainer width="100%" height="100%">
             <LineChart data={data} margin={{ top: 8, right: 12, left: 0, bottom: 0 }}>
               <CartesianGrid stroke="rgba(255,255,255,0.08)" vertical={false} />
-              <XAxis dataKey="month" tick={{ fill: "#a8a3c7", fontSize: 12 }} axisLine={false} tickLine={false} />
-              <YAxis tick={{ fill: "#a8a3c7", fontSize: 12 }} axisLine={false} tickLine={false} width={40} />
+              <XAxis dataKey="month" tick={{ fill: "#5c6b73", fontSize: 12 }} axisLine={false} tickLine={false} />
+              <YAxis tick={{ fill: "#5c6b73", fontSize: 12 }} axisLine={false} tickLine={false} width={40} />
               <Tooltip
                 contentStyle={{
                   borderRadius: 16,
-                  border: "1px solid rgba(196,181,253,0.25)",
-                  background: "#12122a",
-                  color: "#f4f1ff",
+                  border: "1px solid rgba(92,107,115,0.35)",
+                  background: "#253237",
+                  color: "#e0fbfc",
                   boxShadow: "none",
                 }}
                 formatter={(value) => [`${value} ${active.unit}`, active.label]}

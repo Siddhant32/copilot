@@ -51,7 +51,7 @@ export function HealthTimeline() {
                 "glass-panel w-full rounded-[1.35rem] p-4 text-left transition hover:border-teal/50",
               )}
             >
-              <span className="absolute -left-[9px] mt-2 h-4 w-4 rounded-full border-2 border-[#050510] bg-teal shadow-[0_0_12px_#2ee6c8]" />
+              <span className="absolute -left-[9px] mt-2 h-4 w-4 rounded-full border-2 border-[#253237] bg-teal shadow-[0_0_12px_#5c6b73]" />
               <p className="text-xs font-semibold uppercase tracking-wide text-muted">
                 {event.meta}
               </p>

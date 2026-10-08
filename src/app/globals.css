@@ -1,26 +1,26 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f0f3bd;
-  --foreground: #01151d;
-  --card: #fcfdf2;
-  --muted: #033e56;
-  --border: #70ecfd;
-  --teal: #028090;
-  --teal-dark: #01343a;
-  --teal-soft: #b8f6fe;
-  --navy: #01151d;
-  --amber: #d0d82c;
-  --amber-soft: #e0e675;
-  --danger: #8d1b1b;
-  --danger-soft: #f6d8d8;
-  --ai: #b8f6fe;
-  --ai-border: #028090;
-  --ring: #02c39a;
+  --background: #e0fbfc;
+  --foreground: #253237;
+  --card: #c2dfe3;
+  --muted: #5c6b73;
+  --border: #9db4c0;
+  --teal: #253237;
+  --teal-dark: #253237;
+  --teal-soft: #9db4c0;
+  --navy: #253237;
+  --amber: #5c6b73;
+  --amber-soft: #9db4c0;
+  --danger: #253237;
+  --danger-soft: #9db4c0;
+  --ai: #c2dfe3;
+  --ai-border: #5c6b73;
+  --ring: #5c6b73;
   --radius: 1.25rem;
-  --ink: #ffffff;
-  --violet: #05668d;
-  --magenta: #00a896;
+  --ink: #e0fbfc;
+  --violet: #5c6b73;
+  --magenta: #9db4c0;
 }
 
 @theme inline {
@@ -60,7 +60,7 @@ body {
   color: var(--foreground);
   font-family: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
-  background-image: radial-gradient(rgba(1, 21, 29, 0.18) 0.7px, transparent 0.7px);
+  background-image: radial-gradient(rgba(37, 50, 55, 0.12) 0.7px, transparent 0.7px);
   background-size: 26px 26px;
 }
 
@@ -125,7 +125,7 @@ h2,
 }
 
 .ai-surface {
-  background: linear-gradient(135deg, #d9ebe1 0%, #c7ded1 100%);
+  background: linear-gradient(135deg, #c2dfe3 0%, #9db4c0 100%);
   border: 1px solid var(--ai-border);
   box-shadow: 0 14px 35px rgba(8, 75, 53, 0.16), inset 0 1px rgba(255,255,255,0.55);
 }
