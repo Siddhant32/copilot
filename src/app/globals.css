@@ -60,7 +60,38 @@ body {
   color: var(--foreground);
   font-family: var(--font-plus-jakarta), ui-sans-serif, system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
+  background-image: radial-gradient(rgba(255,255,255,0.035) 0.7px, transparent 0.7px);
+  background-size: 18px 18px;
 }
+
+::before {
+  content: "";
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(115deg, transparent 20%, rgba(46,230,200,0.035), transparent 62%);
+}
+
+.surface-float {
+  background: linear-gradient(145deg, rgba(255,255,255,0.105), rgba(255,255,255,0.025));
+  border: 1px solid rgba(255,255,255,0.13);
+  box-shadow: 0 24px 70px rgba(0,0,0,0.28), inset 0 1px rgba(255,255,255,0.08);
+  backdrop-filter: blur(24px);
+}
+
+.orbit-ring {
+  border: 1px solid rgba(124,246,224,0.18);
+  box-shadow: 0 0 35px rgba(46,230,200,0.08), inset 0 0 35px rgba(167,139,250,0.06);
+  transform: rotate(-18deg) perspective(500px) rotateX(62deg);
+}
+
+@keyframes core-breathe {
+  0%, 100% { transform: scale(0.97); filter: saturate(0.95); }
+  50% { transform: scale(1.04); filter: saturate(1.18); }
+}
+
+.core-breathe { animation: core-breathe 7s ease-in-out infinite; }
 
 h1,
 h2,
