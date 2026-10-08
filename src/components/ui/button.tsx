@@ -18,7 +18,7 @@ const buttonVariants = cva(
         outline:
           "border border-white/20 bg-transparent text-navy hover:border-teal hover:text-teal-dark",
         danger: "bg-danger-soft text-danger hover:bg-danger/20",
-        ai: "bg-gradient-to-r from-violet via-magenta to-amber text-ink shadow-[0_0_28px_rgba(167,139,250,0.4)] hover:-translate-y-0.5",
+        ai: "bg-gradient-to-r from-teal-dark via-teal to-[#2b9a68] text-ink shadow-[0_10px_28px_rgba(8,75,53,0.3)] hover:-translate-y-0.5 hover:shadow-[0_14px_34px_rgba(8,75,53,0.38)]",
       },
       size: {
         default: "h-11 px-5",

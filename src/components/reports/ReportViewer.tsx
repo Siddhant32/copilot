@@ -15,7 +15,7 @@ export function ReportViewer({ report }: { report: MedicalReport }) {
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-teal">
           Document preview
         </p>
-        <div className="mt-4 min-h-[520px] rounded-[1.2rem] border border-dashed border-white/15 bg-black/25 p-6">
+        <div className="mt-4 min-h-[520px] rounded-[1.2rem] border border-dashed border-border bg-card/75 p-6">
           <div className="mx-auto max-w-md space-y-4">
             <div className="flex items-start justify-between">
               <div>
@@ -80,7 +80,7 @@ export function ReportViewer({ report }: { report: MedicalReport }) {
               <h3 className="font-semibold text-navy">Important values</h3>
               <ul className="mt-2 space-y-2">
                 {report.values.map((value) => (
-                  <li key={value.name} className="rounded-2xl bg-black/30 px-3 py-2">
+                  <li key={value.name} className="rounded-2xl border border-border/70 bg-teal-soft/40 px-3 py-2">
                     <span className="font-medium text-navy">{value.name}</span>
                     <span className="ml-2 text-muted">
                       {value.value} {value.unit}

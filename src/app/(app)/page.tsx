@@ -16,7 +16,7 @@ export default function DashboardPage() {
   return (
     <div className="mx-auto max-w-[1500px] space-y-8">
       <section className="surface-float relative overflow-hidden rounded-[2rem] p-6 md:p-10 lg:min-h-[430px]">
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(600px_420px_at_75%_45%,rgba(36,135,101,0.18),transparent),radial-gradient(500px_300px_at_10%_0%,rgba(183,123,43,0.12),transparent)]" />
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(600px_420px_at_75%_45%,rgba(17,114,79,0.12),transparent),radial-gradient(500px_300px_at_10%_0%,rgba(8,75,53,0.06),transparent)]" />
         <div className="relative grid items-center gap-4 lg:grid-cols-[0.9fr_1.1fr]">
           <div className="z-10 max-w-xl">
             <motion.p initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} className="text-xs font-semibold uppercase tracking-[0.3em] text-teal">Tuesday · October 8, 2026</motion.p>
