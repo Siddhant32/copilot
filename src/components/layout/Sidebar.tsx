@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 export function Logo({ compact = false }: { compact?: boolean }) {
   return (
     <Link href="/" className="flex items-center gap-3 rounded-xl px-1 py-1">
-      <span className="grid h-11 w-11 place-items-center rounded-2xl bg-gradient-to-br from-teal via-violet to-magenta text-ink shadow-[0_0_24px_rgba(46,230,200,0.45)]">
+      <span className="grid h-11 w-11 place-items-center rounded-2xl bg-teal text-ink shadow-[0_8px_18px_rgba(47,157,145,0.2)]">
         <svg viewBox="0 0 24 24" className="h-5 w-5" aria-hidden>
           <path
             fill="currentColor"
@@ -32,7 +32,7 @@ export function Sidebar() {
   const pathname = usePathname();
 
   return (
-    <aside className="hidden h-screen w-[272px] shrink-0 flex-col border-r border-white/10 bg-[#070713]/55 px-5 py-6 backdrop-blur-3xl lg:flex">
+    <aside className="hidden h-screen w-[272px] shrink-0 flex-col border-r border-white/10 bg-white/75 px-5 py-6 backdrop-blur-3xl lg:flex">
       <Logo />
       <div className="mt-10 mb-3 px-3 text-[10px] uppercase tracking-[0.28em] text-muted/60">Your space</div>
       <nav className="flex flex-1 flex-col gap-1" aria-label="Primary">
@@ -49,8 +49,8 @@ export function Sidebar() {
               className={cn(
                 "group flex items-center gap-3 rounded-2xl px-3 py-2.5 text-sm font-medium transition",
                 active
-                  ? "bg-gradient-to-r from-teal/20 to-violet/20 text-navy shadow-[0_0_20px_rgba(46,230,200,0.12)]"
-                  : "text-muted hover:bg-white/5 hover:text-navy",
+                  ? "bg-teal-soft text-teal-dark shadow-sm"
+                  : "text-muted hover:bg-teal-soft/60 hover:text-navy",
               )}
             >
               <Icon className={cn("h-4 w-4", active && "text-teal")} aria-hidden />

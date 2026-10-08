@@ -15,7 +15,7 @@ export function HealthCore() {
     <div className="relative mx-auto h-[300px] w-full max-w-[410px] sm:h-[360px]" aria-label="Health Core visualization">
       <div className="orbit-ring absolute left-1/2 top-1/2 h-[250px] w-[170px] -translate-x-1/2 -translate-y-1/2 rounded-[50%] sm:h-[290px] sm:w-[205px]" />
       <div className="orbit-ring absolute left-1/2 top-1/2 h-[190px] w-[300px] -translate-x-1/2 -translate-y-1/2 rounded-[50%]" style={{ transform: "translate(-50%, -50%) rotate(24deg) perspective(500px) rotateX(62deg)" }} />
-      <motion.div className="core-breathe absolute left-1/2 top-1/2 grid h-36 w-36 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-[42%_58%_55%_45%/45%_42%_58%_55%] bg-[radial-gradient(circle_at_35%_28%,#d9fff7_0%,#7cf6e0_12%,#2b9fbe_34%,#5a3b9a_72%,#140e38_100%)] shadow-[0_0_45px_rgba(46,230,200,0.38),0_0_100px_rgba(167,139,250,0.24)] sm:h-44 sm:w-44">
+      <motion.div className="core-breathe absolute left-1/2 top-1/2 grid h-36 w-36 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-[42%_58%_55%_45%/45%_42%_58%_55%] bg-[radial-gradient(circle_at_35%_28%,#ffffff_0%,#d9f4ef_16%,#7fcfc3_44%,#2f9d91_100%)] shadow-[0_12px_30px_rgba(47,157,145,0.25),0_0_70px_rgba(127,207,195,0.2)] sm:h-44 sm:w-44">
         <div className="text-center">
           <p className="text-[10px] uppercase tracking-[0.25em] text-white/65">Health core</p>
           <p className="mt-1 font-display text-5xl text-white">86</p>
